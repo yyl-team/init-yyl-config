@@ -5105,7 +5105,7 @@ yargs@^15.4.1:
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
 
-yyl-config-types@^0.3.16:
-  version "0.3.16"
-  resolved "https://registry.npmjs.org/yyl-config-types/-/yyl-config-types-0.3.16.tgz#81594245785791133b058e169b5e5755044f8e00"
-  integrity sha512-eBGxdhHuhdr8TuE1CPY9H3cbZPEiiJelrTf2q1rDs8xZhykqhCcGZHIP4Tg0akxgk0DxhtdkyfqfhHgCwL5pCw==
+yyl-config-types@^0.3.17:
+  version "0.3.17"
+  resolved "https://registry.npmjs.org/yyl-config-types/-/yyl-config-types-0.3.17.tgz#f40c9c5e86bf9042eab76acfb5da98621a2748d0"
+  integrity sha512-JfOwJDVU+5nNcMYIlKALDHaDF0094GdvuOjCeHht09Ms7GUh/ruYt44sdPmrG6+jyml2sXg7EdptRa0EnebOOg==

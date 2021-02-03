@@ -58,6 +58,6 @@
   "author": "liudaojie <liudaojie@yy.com>",
   "license": "MIT",
   "dependencies": {
-    "yyl-config-types": "^0.3.16"
+    "yyl-config-types": "^0.3.17"
   }
 }

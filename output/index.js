@@ -1,5 +1,5 @@
 /*!
- * init-yyl-config cjs 0.1.0
+ * init-yyl-config cjs 0.1.1
  * (c) 2020 - 2021 
  * Released under the MIT License.
  */

@@ -18,7 +18,7 @@ export interface ProjectInfo {
     /** 开发平台 */
     platform?: Required<YylConfig>['platform'];
     /** 要求 yyl 最低版本 */
-    yylVersion: Required<YylConfig>['version'];
+    yylVersion?: Required<YylConfig>['version'];
     /** 项目源文件目录 */
     srcRoot: string;
     /** 是否使用 yarn */

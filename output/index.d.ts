@@ -20,7 +20,7 @@ export interface ProjectInfo {
     /** 要求 yyl 最低版本 */
     yylVersion?: Required<YylConfig>['version'];
     /** 项目源文件目录 */
-    srcRoot: string;
+    srcRoot?: string;
     /** 是否使用 yarn */
     yarn?: YylConfig['yarn'];
 }
@@ -34,17 +34,21 @@ export interface InitYylConfigOption {
     /** 反向代理配置 */
     proxy?: ProxyConfig;
     /** 发布配置 */
-    commit: CommitConfig;
+    commit?: {
+        revAddr?: string;
+        hostname?: string;
+    };
     /** yyl 配置变更 */
     merge?: InitYylConfigMerge;
 }
 /** 默认项目配置 */
-export declare const DEFAULT_PROJECT_INFO: ProjectInfo;
+export declare const DEFAULT_PROJECT_INFO: Required<ProjectInfo>;
 /** 默认服务器配置 */
 export declare const DEFAULR_LOCAL_SEVER_CONFIG: LocalserverConfig;
 /** 默认反向代理配置 */
 export declare const DEFAULT_PROXY_CONFIG: ProxyConfig;
 /** 默认 输出 配置 */
 export declare const DEFAULT_DEST_CONFIG: DestConfig;
+export declare const DEFAULT_COMMIT: CommitConfig;
 /** 初始化 yyl.config */
 export declare function initYylConfig(option: InitYylConfigOption): YylConfigEntry;

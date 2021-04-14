@@ -1,5 +1,5 @@
 const { TestScheduler } = require('jest')
-const initYylConfig = require('../../')
+const { initYylConfig } = require('../../')
 
 test('usage test', () => {
   initYylConfig({

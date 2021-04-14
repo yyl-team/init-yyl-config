@@ -31,7 +31,7 @@ export interface ProjectInfo {
   /** 要求 yyl 最低版本 */
   yylVersion?: Required<YylConfig>['version']
   /** 项目源文件目录 */
-  srcRoot: string
+  srcRoot?: string
   /** 是否使用 yarn */
   yarn?: YylConfig['yarn']
 }
@@ -46,13 +46,16 @@ export interface InitYylConfigOption {
   /** 反向代理配置 */
   proxy?: ProxyConfig
   /** 发布配置 */
-  commit: CommitConfig
+  commit?: {
+    revAddr?: string
+    hostname?: string
+  }
   /** yyl 配置变更 */
   merge?: InitYylConfigMerge
 }
 
 /** 默认项目配置 */
-export const DEFAULT_PROJECT_INFO: ProjectInfo = {
+export const DEFAULT_PROJECT_INFO: Required<ProjectInfo> = {
   /** 项目名称 */
   name: '',
   /** seed 类型 */
@@ -64,7 +67,8 @@ export const DEFAULT_PROJECT_INFO: ProjectInfo = {
   /** src 路径 */
   srcRoot: './src',
   /** 是否使用 yarn */
-  yarn: true
+  yarn: true,
+  seed: 'base'
 }
 
 /** 默认服务器配置 */
@@ -93,51 +97,37 @@ export const DEFAULT_DEST_CONFIG: DestConfig = {
   revPath: 'assets'
 }
 
+export const DEFAULT_COMMIT: CommitConfig = {
+  revAddr: '',
+  hostname: '/'
+}
+
 /** 初始化 yyl.config */
 export function initYylConfig(option: InitYylConfigOption): YylConfigEntry {
-  let { merge, projectInfo, localserver, proxy, dest, commit } = option
-  if (projectInfo) {
-    projectInfo = {
-      ...DEFAULT_PROJECT_INFO,
-      ...projectInfo
-    }
-  } else {
-    projectInfo = {
-      ...DEFAULT_PROJECT_INFO
-    }
+  const { merge } = option
+  const projectInfo: Required<ProjectInfo> = {
+    ...DEFAULT_PROJECT_INFO,
+    ...option.projectInfo
   }
 
-  if (localserver) {
-    localserver = {
-      ...DEFAULR_LOCAL_SEVER_CONFIG,
-      ...localserver
-    }
-  } else {
-    localserver = {
-      ...DEFAULR_LOCAL_SEVER_CONFIG
-    }
+  const localserver = {
+    ...DEFAULR_LOCAL_SEVER_CONFIG,
+    ...option.localserver
   }
 
-  if (proxy) {
-    proxy = {
-      ...DEFAULT_PROXY_CONFIG,
-      ...proxy
-    }
-  } else {
-    proxy = {
-      ...DEFAULT_PROXY_CONFIG
-    }
+  const proxy = {
+    ...DEFAULT_PROXY_CONFIG,
+    ...option.proxy
   }
 
-  if (dest) {
-    dest = {
-      ...DEFAULT_DEST_CONFIG,
-      ...dest
-    }
-  } else {
-    dest = {
-      ...DEFAULT_DEST_CONFIG
-    }
+  const dest = {
+    ...DEFAULT_DEST_CONFIG,
+    ...option.dest
+  }
+
+  const commit = {
+    ...DEFAULT_COMMIT,
+    ...option.commit
   }
 
   const DEST_BASE_PATH = path.join(localserver.root || process.cwd(), dest.basePath as string)
@@ -192,5 +182,3 @@ export function initYylConfig(option: InitYylConfigOption): YylConfigEntry {
 
   return makeYylConfig
 }
-
-module.exports = initYylConfig

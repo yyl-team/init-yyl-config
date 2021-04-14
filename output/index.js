@@ -1,5 +1,5 @@
 /*!
- * init-yyl-config cjs 0.1.2
+ * init-yyl-config cjs 0.1.3
  * (c) 2020 - 2021 
  * Released under the MIT License.
  */
@@ -26,7 +26,8 @@ const DEFAULT_PROJECT_INFO = {
     /** src 路径 */
     srcRoot: './src',
     /** 是否使用 yarn */
-    yarn: true
+    yarn: true,
+    seed: 'base'
 };
 /** 默认服务器配置 */
 const DEFAULR_LOCAL_SEVER_CONFIG = {
@@ -51,33 +52,18 @@ const DEFAULT_DEST_CONFIG = {
     imagesPath: 'image',
     revPath: 'assets'
 };
+const DEFAULT_COMMIT = {
+    revAddr: '',
+    hostname: '/'
+};
 /** 初始化 yyl.config */
 function initYylConfig(option) {
-    let { merge, projectInfo, localserver, proxy, dest, commit } = option;
-    if (projectInfo) {
-        projectInfo = Object.assign(Object.assign({}, DEFAULT_PROJECT_INFO), projectInfo);
-    }
-    else {
-        projectInfo = Object.assign({}, DEFAULT_PROJECT_INFO);
-    }
-    if (localserver) {
-        localserver = Object.assign(Object.assign({}, DEFAULR_LOCAL_SEVER_CONFIG), localserver);
-    }
-    else {
-        localserver = Object.assign({}, DEFAULR_LOCAL_SEVER_CONFIG);
-    }
-    if (proxy) {
-        proxy = Object.assign(Object.assign({}, DEFAULT_PROXY_CONFIG), proxy);
-    }
-    else {
-        proxy = Object.assign({}, DEFAULT_PROXY_CONFIG);
-    }
-    if (dest) {
-        dest = Object.assign(Object.assign({}, DEFAULT_DEST_CONFIG), dest);
-    }
-    else {
-        dest = Object.assign({}, DEFAULT_DEST_CONFIG);
-    }
+    const { merge } = option;
+    const projectInfo = Object.assign(Object.assign({}, DEFAULT_PROJECT_INFO), option.projectInfo);
+    const localserver = Object.assign(Object.assign({}, DEFAULR_LOCAL_SEVER_CONFIG), option.localserver);
+    const proxy = Object.assign(Object.assign({}, DEFAULT_PROXY_CONFIG), option.proxy);
+    const dest = Object.assign(Object.assign({}, DEFAULT_DEST_CONFIG), option.dest);
+    const commit = Object.assign(Object.assign({}, DEFAULT_COMMIT), option.commit);
     const DEST_BASE_PATH = path__default['default'].join(localserver.root || process.cwd(), dest.basePath);
     const makeYylConfig = ({ env }) => {
         const yylConfig = {
@@ -129,9 +115,9 @@ function initYylConfig(option) {
     };
     return makeYylConfig;
 }
-module.exports = initYylConfig;
 
 exports.DEFAULR_LOCAL_SEVER_CONFIG = DEFAULR_LOCAL_SEVER_CONFIG;
+exports.DEFAULT_COMMIT = DEFAULT_COMMIT;
 exports.DEFAULT_DEST_CONFIG = DEFAULT_DEST_CONFIG;
 exports.DEFAULT_PROJECT_INFO = DEFAULT_PROJECT_INFO;
 exports.DEFAULT_PROXY_CONFIG = DEFAULT_PROXY_CONFIG;

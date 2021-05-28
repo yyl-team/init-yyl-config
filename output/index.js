@@ -1,5 +1,5 @@
 /*!
- * init-yyl-config cjs 0.2.0
+ * init-yyl-config cjs 0.2.1
  * (c) 2020 - 2021 
  * Released under the MIT License.
  */
@@ -80,29 +80,27 @@ function initYylConfig(fn) {
         }
         // alias 初始化
         const DEST_BASE_PATH = path__default['default'].join(yylConfig.localserver.root || process.cwd(), yylConfig.dest.basePath);
-        yylConfig.alias = {
+        yylConfig.alias = Object.assign({ 
             /** 输出目录中 到 html, js, css, image 层 的路径 */
-            root: DEST_BASE_PATH,
+            root: DEST_BASE_PATH, 
             /** rev 输出内容的相对地址 */
-            revRoot: DEST_BASE_PATH,
+            revRoot: DEST_BASE_PATH, 
             /** dest 地址 */
-            destRoot: (_b = yylConfig.localserver) === null || _b === void 0 ? void 0 : _b.root,
+            destRoot: (_b = yylConfig.localserver) === null || _b === void 0 ? void 0 : _b.root, 
             /** src 地址 */
-            srcRoot: './src',
+            srcRoot: './src', 
             /** 项目根目录 */
-            dirname: './',
+            dirname: './', 
             /** js 输出地址 */
-            jsDest: path__default['default'].join(DEST_BASE_PATH, (_c = yylConfig.dest) === null || _c === void 0 ? void 0 : _c.jsPath),
+            jsDest: path__default['default'].join(DEST_BASE_PATH, (_c = yylConfig.dest) === null || _c === void 0 ? void 0 : _c.jsPath), 
             /** html 输出地址 */
-            htmlDest: path__default['default'].join(DEST_BASE_PATH, (_d = yylConfig.dest) === null || _d === void 0 ? void 0 : _d.htmlPath),
+            htmlDest: path__default['default'].join(DEST_BASE_PATH, (_d = yylConfig.dest) === null || _d === void 0 ? void 0 : _d.htmlPath), 
             /** css 输出地址 */
-            cssDest: path__default['default'].join(DEST_BASE_PATH, (_e = yylConfig.dest) === null || _e === void 0 ? void 0 : _e.cssPath),
+            cssDest: path__default['default'].join(DEST_BASE_PATH, (_e = yylConfig.dest) === null || _e === void 0 ? void 0 : _e.cssPath), 
             /** images 输出地址 */
-            imagesDest: path__default['default'].join(DEST_BASE_PATH, (_f = yylConfig.dest) === null || _f === void 0 ? void 0 : _f.imagesPath),
+            imagesDest: path__default['default'].join(DEST_BASE_PATH, (_f = yylConfig.dest) === null || _f === void 0 ? void 0 : _f.imagesPath), 
             /** rev-manifest 输出地址 */
-            revDest: path__default['default'].join(DEST_BASE_PATH, (_g = yylConfig.dest) === null || _g === void 0 ? void 0 : _g.revPath),
-            basePath: (_h = yylConfig.dest) === null || _h === void 0 ? void 0 : _h.basePath
-        };
+            revDest: path__default['default'].join(DEST_BASE_PATH, (_g = yylConfig.dest) === null || _g === void 0 ? void 0 : _g.revPath), basePath: (_h = yylConfig.dest) === null || _h === void 0 ? void 0 : _h.basePath }, yylConfig.alias);
         // 初始化处理
         return yylConfig;
     };

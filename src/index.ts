@@ -149,7 +149,8 @@ export function initYylConfig(fn: InitYylConfigCallback): YylConfigEntryFn {
       imagesDest: path.join(DEST_BASE_PATH, yylConfig.dest?.imagesPath as string),
       /** rev-manifest 输出地址 */
       revDest: path.join(DEST_BASE_PATH, yylConfig.dest?.revPath as string),
-      basePath: yylConfig.dest?.basePath as string
+      basePath: yylConfig.dest?.basePath as string,
+      ...yylConfig.alias
     }
 
     // 初始化处理

@@ -71,7 +71,7 @@
 					<h2>使用</h2>
 				</a>
 				<pre><code class="language-javascript"><span style="color: #008000">// yyl.config.js</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">initYylConfig</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;init-yyl-config&#039;</span><span style="color: #000000">)</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">initYylConfig</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;init-yyl-config&#039;</span><span style="color: #000000">)</span>
 <span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #795E26">initYylConfig</span><span style="color: #000000">()</span>
 </code></pre>
 				<a href="#文档" id="文档" style="color: inherit; text-decoration: none;">
@@ -90,26 +90,101 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/inityylconfigmergeprops.html" class="tsd-kind-icon">Init<wbr>Yyl<wbr>Config<wbr>Merge<wbr>Props</a>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/addressmap.html" class="tsd-kind-icon">Address<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/commitconfig.html" class="tsd-kind-icon">Commit<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/concatconfig.html" class="tsd-kind-icon">Concat<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/destconfig.html" class="tsd-kind-icon">Dest<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/env.html" class="tsd-kind-icon">Env</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/inityylconfigoption.html" class="tsd-kind-icon">Init<wbr>Yyl<wbr>Config<wbr>Option</a>
+						<a href="interfaces/inityylconfigfunctionprops.html" class="tsd-kind-icon">Init<wbr>Yyl<wbr>Config<wbr>Function<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/localserverconfig.html" class="tsd-kind-icon">Localserver<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/localserverentryfnprops.html" class="tsd-kind-icon">Localserver<wbr>Entry<wbr>FnProps</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/loggertype.html" class="tsd-kind-icon">Logger<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/projectinfo.html" class="tsd-kind-icon">Project<wbr>Info</a>
+						<a href="interfaces/niceyylconfig.html" class="tsd-kind-icon">Nice<wbr>Yyl<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/proxyconfig.html" class="tsd-kind-icon">Proxy<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/resourceconfig.html" class="tsd-kind-icon">Resource<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/yylconfig.html" class="tsd-kind-icon">Yyl<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/yylconfigalias.html" class="tsd-kind-icon">Yyl<wbr>Config<wbr>Alias</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/yylconfigentryprops.html" class="tsd-kind-icon">Yyl<wbr>Config<wbr>Entry<wbr>Props</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#inityylconfigmerge" class="tsd-kind-icon">Init<wbr>Yyl<wbr>Config<wbr>Merge</a>
+						<a href="modules.html#inityylconfigcallback" class="tsd-kind-icon">Init<wbr>Yyl<wbr>Config<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#localserverentry" class="tsd-kind-icon">Localserver<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#localserverentryfn" class="tsd-kind-icon">Localserver<wbr>Entry<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#loglevel" class="tsd-kind-icon">Log<wbr>Level</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="modules.html#logger" class="tsd-kind-icon">Logger</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#loggermsgtype" class="tsd-kind-icon">Logger<wbr>Msg<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#loggerprogresstype" class="tsd-kind-icon">Logger<wbr>Progress<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#platformtype" class="tsd-kind-icon">Platform<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#scriptsfn" class="tsd-kind-icon">Scripts<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#scriptshandler" class="tsd-kind-icon">Scripts<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#seedtype" class="tsd-kind-icon">Seed<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#workflowtype" class="tsd-kind-icon">Workflow<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#yylconfigentry" class="tsd-kind-icon">Yyl<wbr>Config<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="modules.html#yylconfigentryfn" class="tsd-kind-icon">Yyl<wbr>Config<wbr>Entry<wbr>Fn</a>
 					</li>
 					<li class=" tsd-kind-variable">
-						<a href="modules.html#defaulr_local_sever_config" class="tsd-kind-icon">DEFAULR_<wbr>LOCAL_<wbr>SEVER_<wbr>CONFIG</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#default_commit" class="tsd-kind-icon">DEFAULT_<wbr>COMMIT</a>
+						<a href="modules.html#default_commit_config" class="tsd-kind-icon">DEFAULT_<wbr>COMMIT_<wbr>CONFIG</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="modules.html#default_dest_config" class="tsd-kind-icon">DEFAULT_<wbr>DEST_<wbr>CONFIG</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#default_local_sever_config" class="tsd-kind-icon">DEFAULT_<wbr>LOCAL_<wbr>SEVER_<wbr>CONFIG</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="modules.html#default_project_info" class="tsd-kind-icon">DEFAULT_<wbr>PROJECT_<wbr>INFO</a>

@@ -12,7 +12,7 @@ yarn add init-yyl-config --dev
 
 ```javascript
 // yyl.config.js
-const initYylConfig = require('init-yyl-config')
+const { initYylConfig } = require('init-yyl-config')
 return initYylConfig()
 ```
 

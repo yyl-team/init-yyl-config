@@ -26,3 +26,4 @@ package-lock.json
 .DS_Store
 **/.DS_Store
 docs/**
+test/case/**
